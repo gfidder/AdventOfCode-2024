@@ -5,7 +5,7 @@ use std::{
 };
 
 fn main() {
-    let mut a = App::new("day2-2/input_file.txt".to_string());
+    let mut a = App::new("day2-2/test_file.txt".to_string());
     a.parse_file();
     a.calculate_safe_reports();
 
@@ -62,6 +62,7 @@ impl App {
         let mut decreasing = false;
         let mut increasing = false;
         let report_size = report.len();
+        let mut num_unsafe_levels = 0;
         for i in 0..(report_size - 1) {
             let l_val = report[i];
             let r_val = report[i + 1];
